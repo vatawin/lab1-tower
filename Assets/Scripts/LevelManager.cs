@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     {
         InstantiateAllTowerUI();
     }
-
+private List<Tower> _spawnedTowers = new List<Tower> ();
     // Menampilkan seluruh Tower yang tersedia pada UI Tower Selection
     private void InstantiateAllTowerUI()
     {
@@ -36,5 +36,12 @@ public class LevelManager : MonoBehaviour
             newTowerUI.transform.name = tower.name;
         }
     }
+// Mendaftarkan Tower yang di-spawn agar bisa dikontrol oleh LevelManager
+public void RegisterSpawnedTower (Tower tower)
+{
+_spawnedTowers.Add (tower);
+}
+
+   
 
 }
